@@ -28,3 +28,7 @@
   /* Active dot */
   background-color: #f9423a;
 }
+
+.hidden {
+  display: none;;
+}
