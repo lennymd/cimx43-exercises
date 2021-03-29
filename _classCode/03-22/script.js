@@ -9,14 +9,14 @@
 
   // We can style an element by doing element.style and then a CSS property.
   // newLink.style.display = 'inline-block';
-  // newLink.style.color = 'red';
+  // newLink.style.color = 'magenta';
   // newLink.style.fontSize = '20px';
 
   // much easier to style things by adding and removing classes.
   newLink.setAttribute('class', 'readMore');
 
   // innerHTML is for the text people see.
-  newLink.innerHTML = 'Read more';
+  newLink.innerHTML = 'Click me to read more.';
   // console.log(newLink);
 
   // 2. find the first paragraph
