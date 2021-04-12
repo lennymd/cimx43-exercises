@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;1,600&display=swap');
+@import url(./snow.css);
+@import url(./universe.css);
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sunrise {
+  animation: 15s sunriseSky infinite;
+  animation-delay: 5s;
+  background: radial-gradient(
+    ellipse at bottom,
+    #fca95b 0%,
+    #dca7bf 35%,
+    #5d54c7 85%,
+    #473eac 100%
+  );
+}
+
+.sunrise h1 {
+  animation: 20s fadeText infinite;
+}
+
+.winter {
+  background: radial-gradient(ellipse at bottom, #bfd7ea 10%, #726da8 100%);
+  overflow: hidden;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+}
+.container {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+}
+
+.sun {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+  background: linear-gradient(
+    to top,
+    #fb6753 0%,
+    #fc8b53 50%,
+    #fdd55a 75%,
+    #fee777 100%
+  );
+  background-size: 200% 200%;
+  border-radius: 100%;
+  filter: drop-shadow(0 0 15px #fdd55a);
+  animation: 15s rise infinite;
+  animation-delay: 5s;
+}
+
+.rain {
+  background-color: #6c78a9;
+}
+
+/* credit for rain stuff: https://codepen.io/jh3y/pen/WyNdMG */
+.rain__drop {
+  animation-delay: calc(var(--d) * 1s);
+  animation-duration: calc(var(--a) * 1s);
+  animation-iteration-count: infinite;
+  animation-name: drop;
+  animation-timing-function: linear;
+  height: 30px;
+  left: calc(var(--x) * 1%);
+  position: absolute;
+  top: 105%;
+}
+
+.rain__drop path {
+  fill: #a1c6cc;
+  opacity: var(--o);
+  transform: scaleY(calc(var(--s) * 1.5));
+}
+
+.stars {
+  background-color: #f8ebff;
+  background-image: url(https://i.postimg.cc/DzDxBP6h/source.gif);
+}
+
+.sparkle {
+  color: #035ee2;
+  font-size: 60px;
+  font-weight: 600;
+  background: -webkit-linear-gradient(transparent, transparent),
+    url(https://i.postimg.cc/BvZ4RrD3/tenor.gif) repeat;
+  background: -o-linear-gradient(transparent, transparent) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.universe {
+  background-image: url(/experiment/images/8e46150f790fbefe438d9c2767c32ad1.gif);
+  color: #f8ebff;
+}
+
+@keyframes sunriseSky {
+  0% {
+    background: radial-gradient(
+      ellipse at bottom,
+      #fca95b 0%,
+      #dca7bf 35%,
+      #5d54c7 85%,
+      #473eac 100%
+    );
+  }
+  25% {
+    background: radial-gradient(
+      ellipse at bottom,
+      #fee777 0%,
+      #fca95b 15%,
+      #dca7bf 45%,
+      #5d54c7 100%
+    );
+  }
+  40% {
+    background: radial-gradient(
+      ellipse at bottom,
+      #fee777 0%,
+      #fca95b 25%,
+      #dca7bf 50%,
+      #98b9f2 90%,
+      #6f9ceb 100%
+    );
+  }
+  50% {
+    background: radial-gradient(
+      ellipse at bottom,
+      #fee777 0%,
+      #fca95b 25%,
+      #dca7bf 50%,
+      #98b9f2 90%,
+      #6f9ceb 100%
+    );
+  }
+  55% {
+    background: radial-gradient(
+      ellipse at bottom,
+      #fee777 10%,
+      #fca95b 40%,
+      #98b9f2 80%,
+      #6f9ceb 100%
+    );
+  }
+  100% {
+    background: radial-gradient(
+      circle at center,
+      #fee777 10%,
+      #98b9f2 55%,
+      #6f9ceb 100%
+    );
+  }
+}
+
+@keyframes rise {
+  0% {
+    top: 250px;
+    background-position: 50% 5%;
+    opacity: 0;
+  }
+  25% {
+    background-position: 50% 0%;
+    opacity: 0;
+  }
+  50% {
+    background-position: 50% 0%;
+    opacity: 30%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    top: -175px;
+    background-position: 50% 0%;
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeText {
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* https://codepen.io/jh3y/pen/WyNdMG */
+@-moz-keyframes drop {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+@-webkit-keyframes drop {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+@-o-keyframes drop {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+@keyframes drop {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
