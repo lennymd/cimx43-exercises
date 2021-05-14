@@ -67,9 +67,7 @@ function makeActive2() {
   }
 }
 
-
 // sdada = "do";
-
 
 // var x = "re";
 // var _x;
@@ -77,7 +75,6 @@ function makeActive2() {
 // let y = "mi";
 // let _y;
 // y = "midasdasda";
-
 
 // const z = "fa";
 
